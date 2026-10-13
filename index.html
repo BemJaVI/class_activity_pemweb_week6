@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker Kuliah v2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Task Tracker Kuliah <small>v2 · REST API</small></h1>
+        
+        <!-- Form Tambah Tugas -->
+        <form id="task-form">
+            <input type="text" id="task-title" placeholder="Judul tugas (min. 3 karakter)" required minlength="3">
+            <select id="course-select" required>
+                <option value="">Pilih Mata Kuliah...</option>
+                <!-- Opsi mata kuliah dimuat via API -->
+            </select>
+            <input type="date" id="task-date" required>
+            <button type="submit" id="submit-btn">Tambah</button>
+        </form>
+
+        <div id="error-message" class="hidden"></div>
+
+        <!-- Filter & Status -->
+        <div class="filters">
+            <button class="active">Semua</button>
+            <button>Aktif</button>
+            <button>Selesai</button>
+        </div>
+
+        <!-- Kontainer List Tugas & State UI -->
+        <div id="ui-state"></div>
+        <ul id="task-list"></ul>
+    </div>
+
+    <!-- Script Mock API (asumsi sudah disediakan dari repo asisten) -->
+     <script src="mock-api.js"></script>
+    <!-- <script src="mock-api.js"></script> -->
+    <script src="app.js"></script>
+</body>
+</html>
